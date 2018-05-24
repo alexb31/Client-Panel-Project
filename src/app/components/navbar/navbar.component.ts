@@ -1,6 +1,6 @@
-import { SettingsService } from './../../services/settings.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from './../../services/settings.service';
 import { Router } from '@angular/router';
 import { Client } from '../../models/Client';
 import { FlashMessagesService } from 'angular2-flash-messages';
