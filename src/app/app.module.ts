@@ -1,3 +1,4 @@
+import { SettingsService } from './services/settings.service';
 import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -49,7 +50,7 @@ import { ClientService } from './services/client.service';
     FormsModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [ClientService, AuthService],
+  providers: [ClientService, AuthService, SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

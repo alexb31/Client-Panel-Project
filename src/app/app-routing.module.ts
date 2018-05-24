@@ -1,3 +1,4 @@
+import { RegisterGuard } from './guard/register.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,7 +15,7 @@ import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate:[AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'register', component: RegisterComponent, canActivate:[RegisterGuard]},
   {path: 'client/add', component: AddClientComponent, canActivate:[AuthGuard]},
 
   {path: 'client/edit/:id', component: EditClientComponent, canActivate:[AuthGuard]},
@@ -31,6 +32,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthGuard]
+  providers: [AuthGuard, RegisterGuard]
 })
 export class AppRoutingModule { }
